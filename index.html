@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Teko:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>This is probably your postcode</title>
+  <meta name="description" content="Testing the api.postcodes.io API. Give it geolocation permission, and it'll probably tell you your postcode.">
+
+</head>
+<body>
+
+  <div class="container">
+    <div>
+    <div class="intro">
+      <h1>This is</h1>
+      <h2>Probably your postcode</h2>
+      <div id="postcode">...</div>
+    </div>
+
+    <script>
+
+    let button = document.getElementById('location');
+
+    var geoSuccess = function(position) {
+      // hideNudgeBanner();
+      // We have the location, don't display banner
+      // clearTimeout(nudgeTimeoutId);
+
+      // Do magic with location
+      startPos = position;
+
+      const Http = new XMLHttpRequest();
+      const url='http://api.postcodes.io/postcodes';
+      Http.open("POST", url);
+      Http.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+      Http.send(JSON.stringify({
+        "geolocations" : [{
+        "longitude":  position.coords.longitude,
+        "latitude": position.coords.latitude
+        }]
+      }));
+      Http.onreadystatechange=(e)=>{
+        if (Http.readyState==4 && Http.status==200) {
+          let json = JSON.parse(Http.responseText);
+          document.getElementById('postcode').innerHTML = json.result[0].result[0].postcode;
+        }
+      }
+    };
+
+    var geoError = function(error) {
+      switch(error.code) {
+        case error.TIMEOUT:
+          // The user didn't accept the callout
+          // showNudgeBanner();
+          break;
+      }
+    };
+
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+
+  </script>
+  
+</body>
+</html>
