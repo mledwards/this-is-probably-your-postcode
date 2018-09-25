@@ -1,97 +1,40 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+/* Prototype specific styles */
 
 body {
   background-color: rgba(51, 160, 177, 0.5);
   color: #333333;
-  font-weight: 100;
-  font-style: normal;
-  font-family: 'Open Sans';
-  text-align: center;
+  padding-top: 0;
 }
 
-body, button, input {
-  font-size: 1rem;
+.txt-lg {
+  font-size: 2.5rem;
 }
 
 .container {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-h1, h2 {
+/* Spin Up */
+
+.built-by {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.teko {
   text-transform: uppercase;
   font-family: "Teko";
-  letter-spacing: 1px;
+  font-size: 1.5rem;
 }
 
-h1 {
-  font-size: 10rem;
-  line-height: 7rem;
-  margin-bottom: 1rem;
-}
-h2 {
-  font-size: 3.5rem;
-  line-height: 3.5rem;
-  margin-bottom: 0.5rem;
-}
-h3 {
-  font-size: 1rem;
+a {
+  color: #333333;
+  text-decoration: none;
 }
 
-h3, p {
-  margin-bottom: 1rem;
-}
-
-p {
-  text-align: center;
-}
-
-.btn {
-  border: 2px solid #1a4a52; 
-  background-color: #051112;
-  color: #4BB3C5;
-  padding: 20px;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-}
-
-.btn::placeholder {
-  color: #4BB3C5;
-}
-
-button {
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #4BB3C5;
-  color: #051112;
-}
-
-#particles {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1
-}
-
-.questions {
-  clear: both;
-  text-align: center;
-}
-
-hr {
-  border: 0.5px solid #4BB3C5;
-  margin: 50px 0;
-}
-
-#postcode {
-  font-size: 3rem;
+a:hover {
+  text-decoration: underline;
 }
