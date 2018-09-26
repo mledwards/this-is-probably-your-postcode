@@ -5,4 +5,4 @@ Testing the api.postcodes.io API. Give it geolocation permission, and it'll prob
 Simply open the index.html file in your browser
 
 ## Live demo
-https://this-is-probably-your-postcode.herokuapp.com/
+[https://this-is-probably-your-postcode.spin-up.io/](https://this-is-probably-your-postcode.spin-up.io/)
