@@ -16,28 +16,3 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-/* Spin Up */
-
-.built-by {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-}
-
-.teko {
-  text-transform: uppercase;
-  font-family: "Teko";
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-a {
-  color: #333333;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
